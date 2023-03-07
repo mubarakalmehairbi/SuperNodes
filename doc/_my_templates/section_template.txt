@@ -1,0 +1,7 @@
+{{title}}
+{{under_title}}
+
+.. toctree::
+   :maxdepth: 1
+
+   {{contents}}

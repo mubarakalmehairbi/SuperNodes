@@ -1,0 +1,5 @@
+{{title}}
+{{under_title}}
+
+.. literalinclude:: {{path}}
+   :start-after: sys.path.insert(0, "..")

@@ -1,0 +1,12 @@
+{{class_name}}
+{{under_class_name}}
+
+.. autoclass:: {{to_class}}
+   :show-inheritance:
+
+Methods
+-------
+.. toctree::
+   :titlesonly:
+
+   {{methods}}
