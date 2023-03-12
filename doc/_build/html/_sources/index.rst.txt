@@ -1,8 +1,13 @@
-PythonTrees
-===========
+DataNodes
+=========
 
+.. include:: ../README.md
+   :parser: myst_parser.sphinx_
+
+Table of contents
+-----------------
 .. toctree::
-   :maxdepth: 1
-   :caption: Contents:
+   :maxdepth: 2
 
-   Classes
+   API Reference (classes)
+   Examples

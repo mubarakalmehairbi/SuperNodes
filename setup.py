@@ -1,13 +1,21 @@
 import setuptools
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+with open("README.md", "r") as file:
+    long_description = file.read()
+
+name = "SuperNodes"
+version = "v1.0.0"
+author = "Mubarak Almehairbi"
+description = "Creates tree data structures easily"
+package_name = "supernodes"
+with open(f"{package_name}/requirements.txt", "rt") as file:
+    requirements = file.read().splitlines()
 
 setuptools.setup(
-    name="quicksample",                     # This is the name of the package
-    version="0.0.1",                        # The initial release version
-    author="Aveek Das",                     # Full name of the author
-    description="Quicksample Test Package for SQLShack Demo",
+    name=package_name,                     # This is the name of the package
+    version=version,                        # The initial release version
+    author=author,                     # Full name of the author
+    description=description,
     long_description=long_description,      # Long description read from the the readme file
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),    # List of all python modules to be installed
@@ -17,7 +25,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],                                      # Information to filter the project on PyPi website
     python_requires='>=3.6',                # Minimum version requirement of the package
-    py_modules=["quicksample"],             # Name of the python package
-    package_dir={'':'quicksample/src'},     # Directory of the source code of the package
-    install_requires=[]                     # Install other dependencies if any
+    py_modules=[package_name],             # Name of the python package
+    install_requires=requirements                     # Install other dependencies if any
 )

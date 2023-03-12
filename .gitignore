@@ -1,1 +1,6 @@
 /_*
+.idea/*
+venv/*
+*.egg-info
+build/*
+dist/*

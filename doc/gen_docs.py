@@ -4,12 +4,15 @@ import subprocess
 import sys
 sys.path.insert(0, "..")
 import inspect
-from pythontrees import DataNode, InEquality
+from supernodes import SuperNode, InEquality
 
-package_title = "PythonTrees"
-classes = [DataNode, InEquality]
+package_title = "SuperNodes"
+classes = [SuperNode, InEquality]
 examples = glob.glob("../examples/*.py")
-sections = {"Classes": [f"{cls.__module__}.{cls.__name__}" for cls in classes]}
+sections = {"API Reference (classes)": [f"{cls.__module__}.{cls.__name__}" for cls in classes],
+            "Examples": [os.path.basename(f).removesuffix(".py") for f in examples]}
+sections_text = {"API Reference (classes)": "Here you can find the classes you can use in this package.",
+                 "Examples": "Here you can find some examples on using the package."}
 clear = True
 run = True
 
@@ -32,8 +35,10 @@ replace_template(index_dict, "index_template.txt", "index.rst")
 
 for section_title, section_contents in sections.items():
     contents = "\n   ".join(section_contents)
+    text = sections_text[section_title]
     classes_section_dict = {"title": section_title,
                             "under_title": len(section_title)*"=",
+                            "text": text,
                             "contents": contents}
     replace_template(classes_section_dict, "section_template.txt", f"{section_title}.rst")
 
@@ -45,7 +50,10 @@ for cls in classes:
                 "under_class_name": "="*len(cls.__name__),
                 "to_class": cls_api,
                 "methods": f"{methods_str}"}
-    replace_template(cls_dict, "class_template.txt", f"{cls_api}.rst")
+    if methods != []:
+        replace_template(cls_dict, "class_template.txt", f"{cls_api}.rst")
+    else:
+        replace_template(cls_dict, "class_methodless_template.txt", f"{cls_api}.rst")
     for method_name, method in methods:
         method_api = f"{cls_api}.{method_name}"
         method_dict = {"method_name": f"{cls.__name__}.{method_name}",
@@ -53,12 +61,12 @@ for cls in classes:
                        "to_method": method_api}
         replace_template(method_dict, "method_template.txt", f"{method_api}.rst")
 
-#for example in examples:
-#    title = os.path.basename(example).removesuffix('.py')
-#    example_dict = {"title": title,
-#                    "under_title": len(title)*"=",
-#                    "path": example}
-#    replace_template(example_dict, "code_template.txt", f"{title}.rst")
+for example in examples:
+    title = os.path.basename(example).removesuffix('.py')
+    example_dict = {"title": title,
+                    "under_title": len(title)*"=",
+                    "path": example}
+    replace_template(example_dict, "code_template.txt", f"{title}.rst")
 
 if run:
     subprocess.check_call(['make', 'clean'])

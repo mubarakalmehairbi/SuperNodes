@@ -9,15 +9,16 @@ import sys
 import os
 sys.path.insert(0,os.path.abspath('..'))
 
-project = 'PythonTrees'
+project = 'SuperNodes'
 copyright = '2023, Mubarak Almehairbi'
 author = 'Mubarak Almehairbi'
-release = '0.1.0-alpha.1'
+release = 'v1.0.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.viewcode','sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'sphinx.ext.todo', 'sphinx.ext.autosummary']
+extensions = ['sphinx.ext.viewcode','sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'sphinx.ext.todo',
+              'sphinx.ext.autosummary', 'myst_parser', 'sphinx.ext.intersphinx']
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
