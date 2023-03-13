@@ -1,8 +1,9 @@
 """
+Different ways of creating trees
+
 Different ways of creating trees using SuperNodes are presented below.
 """
 import pandas as pd
-
 from supernodes import SuperNode
 
 # Method 1: using `append`

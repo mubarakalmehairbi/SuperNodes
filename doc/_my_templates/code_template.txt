@@ -1,4 +1,8 @@
 {{title}}
 {{under_title}}
 
-.. literalinclude:: {{path}}
+{{text}}
+
+.. code-block:: python
+
+   {{code}}

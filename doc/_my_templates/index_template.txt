@@ -1,8 +1,7 @@
 {{title}}
 {{under_title}}
 
-.. include:: ../README.md
-   :parser: myst_parser.sphinx_
+{{read_me}}
 
 Table of contents
 -----------------
