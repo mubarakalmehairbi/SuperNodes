@@ -16,24 +16,24 @@ pip install supernodes
 To create a tree, first create the root node:
 
 ```python
-from supernodes import DataNode
+from supernodes import SuperNode
 
-root_node = DataNode(name="root")
+root_node = SuperNode(name="root")
 ```
 
 You can add children nodes to the root node using different methods:
 
 * Using ``append`` function:
 ```python
-child_1 = DataNode(name="child-1")
-child_2 = DataNode(name="child-2")
+child_1 = SuperNode(name="child-1")
+child_2 = SuperNode(name="child-2")
 root_node.append(child_1)
 root_node.append(child_2)
 ```
 * Using indexer:
 ```python
-root_node['child-1'] = DataNode()
-root_node['child-2'] = DataNode()
+root_node['child-1'] = SuperNode()
+root_node['child-2'] = SuperNode()
 ```
 * Using `split`:
 ```python
@@ -47,30 +47,28 @@ To create a tree that can be used as a decision tree,
 create the root node and add an inequality string or
 a function inside the `function` parameter:
 ```python
-root_node = DataNode(name="root-node", function="x > 10")
+root_node = SuperNode(name="root-node", function="x > 10")
 ```
 Then create the children and add their names to the attributes,
 `child_name_if_true` and `child_name_if_false`.
 ```python
-root_node['first-child'] = DataNode()
-root_node['second-child'] = DataNode()
+root_node['first-child'] = SuperNode()
+root_node['second-child'] = SuperNode()
 root_node.child_name_if_true = "first-child"
 root_node.child_name_if_false = "second-child"
 ```
 Run the decision tree:
 ```python
 leaf = root_node.run_as_binary_tree(x=11)
-leaf
-#Output: (name=first-child)
 ```
 
 # Documentation
 You can find the documentation in this link:
-[SuperNodes docs](https://supernodes.readthedocs.io/en/latest/).
+[SuperNodes docs](https://supernodes.herokuapp.com/).
 
 # More examples
 You can find more examples this link:
-[SuperNodes examples](https://supernodes.readthedocs.io/en/latest/examples/).
+[SuperNodes examples](https://supernodes.herokuapp.com/examples.html).
 
 # License and Copyrights
 Copyrights (c) 2023 Mubarak Almehairbi.
