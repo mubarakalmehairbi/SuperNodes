@@ -49,6 +49,7 @@ class InEquality:
     False
 
     Including a list in the inequality:
+
     >>> inequality = InEquality("x[0] > x[1]")
     >>> inequality(x=[10, 20])
     False
@@ -56,6 +57,7 @@ class InEquality:
     Note that slicing is not yet supported when using lists.
 
     Including two variables in the inequality:
+
     >>> inequality = InEquality("x == y")
     >>> inequality(x=10, y=10)
     True
