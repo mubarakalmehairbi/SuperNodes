@@ -40,7 +40,7 @@ root_node['child-2'] = SuperNode()
 root_node.split(num=2, names=['child-1', 'child-2'])
 ```
 You can view more methods for adding children nodes
-[SuperNodes methods](https://supernodes.readthedocs.io/en/latest/examples/methods/).
+[SuperNodes methods](https://supernodes.herokuapp.com/examples.html).
 
 # How to use as a decision tree
 To create a tree that can be used as a decision tree,

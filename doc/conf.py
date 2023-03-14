@@ -8,11 +8,12 @@
 import sys
 import os
 sys.path.insert(0,os.path.abspath('..'))
+from supernodes import __version__
 
 project = 'SuperNodes'
 copyright = '2023, Mubarak Almehairbi'
 author = 'Mubarak Almehairbi'
-release = 'v1.0.0'
+release = __version__
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

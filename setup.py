@@ -1,10 +1,11 @@
 import setuptools
+from supernodes import __version__
 
 with open("README.md", "r") as file:
     long_description = file.read()
 
 name = "SuperNodes"
-version = "v1.0.0"
+version = __version__
 author = "Mubarak Almehairbi"
 description = "Creates tree data structures easily"
 package_name = "supernodes"
