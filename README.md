@@ -61,7 +61,7 @@ Run the decision tree:
 ```python
 leaf = root_node.run_as_binary_tree(x=11)
 ```
-# Extra
+
 # Documentation
 You can find the documentation in this link:
 [SuperNodes docs](https://supernodes.herokuapp.com/).
