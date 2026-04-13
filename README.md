@@ -1,3 +1,8 @@
+> [!WARNING]
+> The project is no longer in active development. You are still welcome to open any issues.
+> ### Why?
+> As far as I am aware, the library isn't being used in any project. Let me know if you are using it in your project.
+
 # Overview
 SuperNodes is a Python package that creates tree data structures easily.
 It is designed to be similar to Python dictionaries but with more
